@@ -14,13 +14,16 @@ _published at_ 04/01/2024
 7. Update Resources
 8. Delete Resources
 9. Variable
-   <br/>
+
+    <br/>
    **Pre-Requirements**
 
 - install terraform https://developer.hashicorp.com/terraform/install
 - terraform registry, see available all providers: https://registry.terraform.io
 - setup gcloud CLI: https://cloud.google.com/sdk/gcloud/reference/auth/login
+  
   <br/>
+  
   **Content:**
 
 1. **Terraform Plugin:** For better experience, we could install Terraform Plugin from hashicorp, then configure the autocomplete prettify on save, we could setup it on settings.json on your vscode then add this block of code:
