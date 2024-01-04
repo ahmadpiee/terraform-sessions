@@ -3,7 +3,7 @@ _published at_ 04/01/2024
 
 <br/>
 
-**Table Content:**
+**Table of Contents:**
 
 1. Terraform Plugin
 2. Provider
@@ -16,6 +16,7 @@ _published at_ 04/01/2024
 9. Variable
 
     <br/>
+    
    **Pre-Requirements**
 
 - install terraform https://developer.hashicorp.com/terraform/install
