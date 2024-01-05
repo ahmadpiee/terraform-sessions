@@ -1,42 +1,42 @@
-resource "google_compute_instance" "vm-app-backend" {
-  name                      = "vm-app-backend"
-  machine_type              = "e2-micro"
-  zone                      = "asia-southeast2-a"
-  allow_stopping_for_update = true
+# resource "google_compute_instance" "vm-app-backend" {
+#   name                      = "vm-app-backend"
+#   machine_type              = "e2-micro"
+#   zone                      = "asia-southeast2-a"
+#   allow_stopping_for_update = true
 
-  tags = ["fw-app"]
+#   tags = ["fw-app"]
 
-  boot_disk {
-    initialize_params {
-      image = "ubuntu-os-cloud/ubuntu-2204-jammy-v20231213a"
-      type  = "pd-ssd"
-      size  = 10
-      labels = {
-        my_label = "ubuntu22amd64"
-      }
-    }
-  }
+#   boot_disk {
+#     initialize_params {
+#       image = "ubuntu-os-cloud/ubuntu-2204-jammy-v20231213a"
+#       type  = "pd-ssd"
+#       size  = 10
+#       labels = {
+#         my_label = "ubuntu22amd64"
+#       }
+#     }
+#   }
 
 
-  network_interface {
-    network    = google_compute_network.vpc-app.name
-    subnetwork = google_compute_subnetwork.subnet-app-be.name
+#   network_interface {
+#     network    = google_compute_network.vpc-app.name
+#     subnetwork = google_compute_subnetwork.subnet-app-be.name
 
-    access_config {
-      // Ephemeral public IP
-    }
-  }
-  metadata = {
-    ssh_keys = file("~/.ssh/id_rsa.pub")
-  }
+#     access_config {
+#       // Ephemeral public IP
+#     }
+#   }
+#   metadata = {
+#     ssh_keys = file("~/.ssh/id_rsa.pub")
+#   }
 
-  metadata_startup_script = <<EOF
-  #!/bin/bash
-  apt update -y && sudo apt upgrade -y
-  sudo apt install nginx -y
+#   metadata_startup_script = <<EOF
+#   #!/bin/bash
+#   apt update -y && sudo apt upgrade -y
+#   sudo apt install nginx -y
 
-EOF
-}
+# EOF
+# }
 
 
 # 2
@@ -80,13 +80,13 @@ resource "google_compute_instance" "vm-app-fe" {
 EOF
 }
 
-# be
-output "ip-private-backend" {
-  value = google_compute_instance.vm-app-backend.network_interface[*].network_ip
-}
-output "ip-public-backend" {
-  value = google_compute_instance.vm-app-backend.network_interface[*].access_config[*].nat_ip
-}
+# # be
+# output "ip-private-backend" {
+#   value = google_compute_instance.vm-app-backend.network_interface[*].network_ip
+# }
+# output "ip-public-backend" {
+#   value = google_compute_instance.vm-app-backend.network_interface[*].access_config[*].nat_ip
+# }
 
 # fe
 output "ip-private-fe" {
