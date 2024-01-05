@@ -1,7 +1,8 @@
 resource "google_compute_instance" "vm-app-backend" {
-  name         = "vm-app-backend"
-  machine_type = "e2-medium"
-  zone         = "asia-southeast2-a"
+  name                      = "vm-app-backend"
+  machine_type              = "e2-micro"
+  zone                      = "asia-southeast2-a"
+  allow_stopping_for_update = true
 
   tags = ["fw-app"]
 
