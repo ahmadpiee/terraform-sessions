@@ -1,5 +1,5 @@
-resource "google_compute_instance" "vm-app-be" {
-  name         = "vm-app-be"
+resource "google_compute_instance" "vm-app-backend" {
+  name         = "vm-app-backend"
   machine_type = "e2-medium"
   zone         = "asia-southeast2-a"
 
@@ -80,11 +80,11 @@ EOF
 }
 
 # be
-output "ip-private-be" {
-  value = google_compute_instance.vm-app-be.network_interface[*].network_ip
+output "ip-private-backend" {
+  value = google_compute_instance.vm-app-backend.network_interface[*].network_ip
 }
-output "ip-public-be" {
-  value = google_compute_instance.vm-app-be.network_interface[*].access_config[*].nat_ip
+output "ip-public-backend" {
+  value = google_compute_instance.vm-app-backend.network_interface[*].access_config[*].nat_ip
 }
 
 # fe
