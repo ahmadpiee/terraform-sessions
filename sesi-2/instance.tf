@@ -3,7 +3,7 @@ resource "google_compute_instance" "vm-app-backend" {
   machine_type = "e2-medium"
   zone         = "asia-southeast2-a"
 
-  tags = ["fw-app", "ssh-access"]
+  tags = ["fw-app"]
 
   boot_disk {
     initialize_params {

@@ -22,9 +22,9 @@ _published at_ 04/01/2024
 - install terraform https://developer.hashicorp.com/terraform/install
 - terraform registry, see available all providers: https://registry.terraform.io
 - setup gcloud CLI: https://cloud.google.com/sdk/gcloud/reference/auth/login
-  
+
   <br/>
-  
+
   **Content:**
 
 1. **Terraform Plugin:** For better experience, we could install Terraform Plugin from hashicorp, then configure the autocomplete prettify on save, we could setup it on settings.json on your vscode then add this block of code:
@@ -45,4 +45,4 @@ _published at_ 04/01/2024
 4. **Resources:** you can find all the sample how to make resources on this [link](https://registry.terraform.io/providers/hashicorp/google/latest/docs), for example you can make a GCP instance with this [docs](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/compute_instance)
 5. **Output:** for example you can display output using output values, and you can find out the sample [here](https://developer.hashicorp.com/terraform/language/values/outputs)
 6. **Data Sources:** for example you can get data from GCP (meaning your source already made but not using terraform, so you need to integrate all the source in your terraform configutaions) using data sources, and you can find out the sample [here](https://developer.hashicorp.com/terraform/language/data-sources)
-7. **Update Resources:** for example if you wanna update the name of your virtual machine, you need to stop the service from running, then you can update the name in your terraform configuration, then run your terraform again. (warning: you have to be careful, because the resource will be replaced by the new updated one, and behind the scene, the old one will be deleted, and the new one will be added, even if you only change the name of your resource)
+7. **Update Resources:** for example if you wanna update the name of your virtual machine, you need to stop the service from running, then you can update the name in your terraform configuration, then run your terraform again. (warning: you have to be careful, because the resource will be replaced by the new updated one, and behind the scene, the old one will be deleted, and the new one will be added, even if you only change the name of your resource, but in some cases it will only be updated if you only change particular values e.g the image, the machine type, the zone, the tag. etc, and in some cases you also don't need to stop the resource from running like if you update the network tag/the tag)
