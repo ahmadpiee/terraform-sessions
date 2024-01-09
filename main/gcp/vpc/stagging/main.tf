@@ -1,3 +1,9 @@
+terraform {
+  backend "gcs" {
+    bucket = "terraform-asofdevlabs"
+    prefix = "terraform/state/vpc/vpc-stagging"
+  }
+}
 module "test-module" {
   source = "../../../../module/gcp/vpc"
 
