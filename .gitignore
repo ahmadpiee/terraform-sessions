@@ -1,2 +1,4 @@
 # creds
 credentials.json
+staging-credentials.json
+production-credentials.json

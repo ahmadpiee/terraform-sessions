@@ -15,6 +15,7 @@
 9.  Variable
 10. Terraform Module
 11. existing module
+12. wrap terraform with terragrunt
 
 ## **Pre-Requirements**
 
@@ -48,3 +49,7 @@
 - first, you can run `terraform plan`, and then input all variables value one by one
 - second, you can run `terraform plan -var-file=<your_variable_value>`
 - third, you can make new terraform file named `terraform.tfvars` and put all your variables value there
+
+10. **Terraform Module:** is the way to reuse your terraform configuration
+11. **existing module:** is the way to reuse your terraform configuration that already made by other people
+12. **wrap terraform with terragrunt:** wrapping your terragrunt configuration with terragrunt have a main benefit that is to manage your resurce cross environment easily
